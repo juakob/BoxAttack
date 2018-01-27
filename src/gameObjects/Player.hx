@@ -87,6 +87,7 @@ class Player extends FlxSprite
 	
 	function throwObject() 
 	{
+		
 		if(facing==FlxObject.UP){
 			grabedObject.toss(0,-1);
 		}else
@@ -113,7 +114,7 @@ class Player extends FlxSprite
 	
 	public function knockOut(object:Tossable) 
 	{
-		velocity.set(0, 0);
+		acceleration.set(0, 0);
 		knockOutTime = KNOCKOUT_TOTALTIME;
 		if(grabedObject!=null){
 			grabedObject.drop();

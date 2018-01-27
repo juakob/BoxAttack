@@ -80,6 +80,9 @@ class TossableImp extends FlxSprite implements Tossable
 		player = null;
 		/*velocity.x =velocity.x;
 		velocity.y =velocity.y;*/
+		velocity.set(0, 0);
+		x = 100 + Math.random() * 1000;
+		y =100+ Math.random()*500;
 		drag.set(300, 300);
 	}
 	

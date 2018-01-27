@@ -25,5 +25,13 @@ class Head extends TossableImp
 		animation.play("loop");
 		
 	}
+	override public function bounce():Void 
+	{
+		flying = false;
+		player = null;
+		/*velocity.x =velocity.x;
+		velocity.y =velocity.y;*/
+		drag.set(300, 300);
+	}
 	
 }

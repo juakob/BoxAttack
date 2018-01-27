@@ -20,8 +20,10 @@ import io.PlayerInput;
 class GameState extends FlxState
 {
 
-	public function new() 
+	var joystickId:Array<Int>;
+	public function new(joysitcks:Array<Int>=null) 
 	{
+		joystickId = joysitcks;
 		super();
 	}
 	var players:FlxGroup;
@@ -30,14 +32,19 @@ class GameState extends FlxState
 	var walls:FlxGroup;
 	var rocks:FlxGroup;
 	
-	override public function create(joysitcks:Array<Int>):Void 
+	override public function create():Void 
 	{
 		players = new FlxGroup();
 		throwables = new FlxGroup();
 		rocks = new FlxGroup();
-		for (gamepadId in joysitcks) 
+		joystickId = [0, 1, 2];
+		for (gamepadId in joystickId) 
 		{
 			createPlayer(100, 100, new Joystick(FlxG.gamepads.getByID(gamepadId)));
+			
+		}
+		for (i in 0...(joystickId.length+2)) 
+		{
 			createRock();
 		}
 		
