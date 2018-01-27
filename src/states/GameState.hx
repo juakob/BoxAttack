@@ -4,9 +4,11 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
+import gameObjects.Head;
 import gameObjects.TossableImp;
 import gameObjects.Player;
 import gameObjects.Tossable;
+import io.Joystick;
 import io.Keyboard1;
 import io.Keyboard2;
 
@@ -23,7 +25,7 @@ class GameState extends FlxState
 	}
 	var players:FlxGroup;
 	var throwables:FlxGroup;
-	var head:TossableImp;
+	var head:Head;
 	var walls:FlxGroup;
 	var rocks:FlxGroup;
 	
@@ -31,13 +33,13 @@ class GameState extends FlxState
 	{
 		players = new FlxGroup();
 		throwables = new FlxGroup();
-		 var player = new Player(new Keyboard1(),100, 100);
+		 var player = new Player(new Joystick(FlxG.gamepads.firstActive),100, 100);
 		add(player);
 		players.add(player);
-		 player = new Player(new Keyboard2(),400, 100);
+		 player = new Player(new Joystick(FlxG.gamepads.lastActive),400, 100);
 		add(player);
 		players.add(player);
-		head = new TossableImp(500, 500);
+		head = new Head(500, 500);
 		add(head);
 		throwables.add(head);
 		
@@ -86,9 +88,11 @@ class GameState extends FlxState
 	
 	function playerVsRocks(player:Player,object:Tossable) 
 	{
-		if(!player.isKnockOut()&&object.grab(player)){
+		if(!player.hasRock()&&!player.isKnockOut()&&object.grab(player)){
 			player.grabHead(object);
-		}else {
+		}else
+		if(object.isOnAir())
+		 {
 			player.knockOut(object);
 			object.bounce();
 		}

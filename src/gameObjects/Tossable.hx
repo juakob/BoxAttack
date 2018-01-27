@@ -11,4 +11,5 @@ interface Tossable
 	function grab(player:Player):Bool;
 	function bounce():Void;
 	function drop():Void;
+	function isOnAir():Bool;
 }

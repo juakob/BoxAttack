@@ -31,7 +31,7 @@ class Player extends FlxSprite
 		super(X, Y);
 		makeGraphic(50, 50);
 		drag.set(1000, 1000);
-		maxVelocity.set(200, 200);
+		maxVelocity.set(300, 300);
 		controller = aPlayerInput;
 	}
 	
@@ -140,6 +140,11 @@ class Player extends FlxSprite
 	public function isKnockOut():Bool 
 	{
 		return knockOutTime > 0;
+	}
+	
+	public function hasRock() 
+	{
+		return grabedObject != null;
 	}
 	
 }

@@ -1,0 +1,115 @@
+﻿{"frames": {
+
+"mc_cuerpo0000":
+{
+	"frame": {"x":0,"y":0,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0001":
+{
+	"frame": {"x":414,"y":0,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0002":
+{
+	"frame": {"x":828,"y":0,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0003":
+{
+	"frame": {"x":1242,"y":0,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0004":
+{
+	"frame": {"x":0,"y":377,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0005":
+{
+	"frame": {"x":414,"y":377,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0006":
+{
+	"frame": {"x":828,"y":377,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0007":
+{
+	"frame": {"x":1242,"y":377,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0008":
+{
+	"frame": {"x":0,"y":754,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0009":
+{
+	"frame": {"x":414,"y":754,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0010":
+{
+	"frame": {"x":828,"y":754,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0011":
+{
+	"frame": {"x":1242,"y":754,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0012":
+{
+	"frame": {"x":0,"y":0,"w":414,"h":377},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "15.0.0.173",
+	"image": "Gnocople_lateral_stay.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1"
+}
+}
