@@ -11,6 +11,7 @@ import gameObjects.Tossable;
 import io.Joystick;
 import io.Keyboard1;
 import io.Keyboard2;
+import io.PlayerInput;
 
 /**
  * ...
@@ -29,25 +30,27 @@ class GameState extends FlxState
 	var walls:FlxGroup;
 	var rocks:FlxGroup;
 	
-	override public function create():Void 
+	override public function create(joysitcks:Array<Int>):Void 
 	{
 		players = new FlxGroup();
 		throwables = new FlxGroup();
-		 var player = new Player(new Joystick(FlxG.gamepads.firstActive),100, 100);
-		add(player);
-		players.add(player);
-		 player = new Player(new Joystick(FlxG.gamepads.lastActive),400, 100);
-		add(player);
-		players.add(player);
+		rocks = new FlxGroup();
+		for (gamepadId in joysitcks) 
+		{
+			createPlayer(100, 100, new Joystick(FlxG.gamepads.getByID(gamepadId)));
+			createRock();
+		}
+		
+		
+		
+
 		head = new Head(500, 500);
 		add(head);
 		throwables.add(head);
 		
-		rocks = new FlxGroup();
-		var rock:TossableImp = new TossableImp(1280 - 100, 600);
-		rocks.add(rock);
-		throwables.add(rock);
-		add(rock);
+		
+		
+		
 		
 		
 		
@@ -75,6 +78,20 @@ class GameState extends FlxState
 		down.height = 10;
 		down.immovable = true;
 		walls.add(down);
+	}
+	
+	function createRock() 
+	{
+		var rock:TossableImp = new TossableImp(100+Math.random()*1000,100+Math.random()*500);
+		rocks.add(rock);
+		throwables.add(rock);
+		add(rock);
+	}
+	function createPlayer(aX:Float, aY:Float, controller:PlayerInput)
+	{
+		var player = new Player(controller,aX, aY);
+		add(player);
+		players.add(player);
 	}
 	override public function update(elapsed:Float):Void 
 	{

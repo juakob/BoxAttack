@@ -113,6 +113,7 @@ class Player extends FlxSprite
 	
 	public function knockOut(object:Tossable) 
 	{
+		velocity.set(0, 0);
 		knockOutTime = KNOCKOUT_TOTALTIME;
 		if(grabedObject!=null){
 			grabedObject.drop();
