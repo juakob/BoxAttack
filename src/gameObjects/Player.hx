@@ -31,7 +31,7 @@ class Player extends FlxSprite
 		super(X, Y);
 		makeGraphic(50, 50);
 		drag.set(1000, 1000);
-		maxVelocity.set(200, 200);
+		maxVelocity.set(300, 300);
 		controller = aPlayerInput;
 	}
 	
@@ -87,6 +87,7 @@ class Player extends FlxSprite
 	
 	function throwObject() 
 	{
+		
 		if(facing==FlxObject.UP){
 			grabedObject.toss(0,-1);
 		}else
@@ -113,6 +114,7 @@ class Player extends FlxSprite
 	
 	public function knockOut(object:Tossable) 
 	{
+		acceleration.set(0, 0);
 		knockOutTime = KNOCKOUT_TOTALTIME;
 		if(grabedObject!=null){
 			grabedObject.drop();
@@ -140,6 +142,11 @@ class Player extends FlxSprite
 	public function isKnockOut():Bool 
 	{
 		return knockOutTime > 0;
+	}
+	
+	public function hasRock() 
+	{
+		return grabedObject != null;
 	}
 	
 }

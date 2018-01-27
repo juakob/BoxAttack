@@ -19,6 +19,7 @@ class TossableImp extends FlxSprite implements Tossable
 	{
 		super(X, Y);
 		makeGraphic(30, 30, FlxColor.RED);
+		elasticity = 0.3;
 	}
 	override public function update(elapsed:Float):Void 
 	{
@@ -77,8 +78,11 @@ class TossableImp extends FlxSprite implements Tossable
 	{
 		flying = false;
 		player = null;
-		velocity.x =-velocity.x;
-		velocity.y =-velocity.y;
+		/*velocity.x =velocity.x;
+		velocity.y =velocity.y;*/
+		velocity.set(0, 0);
+		x = 100 + Math.random() * 1000;
+		y =100+ Math.random()*500;
 		drag.set(300, 300);
 	}
 	
@@ -90,5 +94,12 @@ class TossableImp extends FlxSprite implements Tossable
 		player = null;
 		flying = false;
 		velocity.set(0, 0);
+	}
+	
+	/* INTERFACE gameObjects.Tossable */
+	
+	public function isOnAir():Bool 
+	{
+		return flying;
 	}
 }

@@ -4,11 +4,14 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
+import gameObjects.Head;
 import gameObjects.TossableImp;
 import gameObjects.Player;
 import gameObjects.Tossable;
+import io.Joystick;
 import io.Keyboard1;
 import io.Keyboard2;
+import io.PlayerInput;
 
 /**
  * ...
@@ -17,13 +20,15 @@ import io.Keyboard2;
 class GameState extends FlxState
 {
 
-	public function new() 
+	var joystickId:Array<Int>;
+	public function new(joysitcks:Array<Int>=null) 
 	{
+		joystickId = joysitcks;
 		super();
 	}
 	var players:FlxGroup;
 	var throwables:FlxGroup;
-	var head:TossableImp;
+	var head:Head;
 	var walls:FlxGroup;
 	var rocks:FlxGroup;
 	
@@ -31,21 +36,28 @@ class GameState extends FlxState
 	{
 		players = new FlxGroup();
 		throwables = new FlxGroup();
-		 var player = new Player(new Keyboard1(),100, 100);
-		add(player);
-		players.add(player);
-		 player = new Player(new Keyboard2(),400, 100);
-		add(player);
-		players.add(player);
-		head = new TossableImp(500, 500);
+		rocks = new FlxGroup();
+		joystickId = [0, 1, 2];
+		for (gamepadId in joystickId) 
+		{
+			createPlayer(100, 100, new Joystick(FlxG.gamepads.getByID(gamepadId)));
+			
+		}
+		for (i in 0...(joystickId.length+2)) 
+		{
+			createRock();
+		}
+		
+		
+		
+
+		head = new Head(500, 500);
 		add(head);
 		throwables.add(head);
 		
-		rocks = new FlxGroup();
-		var rock:TossableImp = new TossableImp(1280 - 100, 600);
-		rocks.add(rock);
-		throwables.add(rock);
-		add(rock);
+		
+		
+		
 		
 		
 		
@@ -74,6 +86,20 @@ class GameState extends FlxState
 		down.immovable = true;
 		walls.add(down);
 	}
+	
+	function createRock() 
+	{
+		var rock:TossableImp = new TossableImp(100+Math.random()*1000,100+Math.random()*500);
+		rocks.add(rock);
+		throwables.add(rock);
+		add(rock);
+	}
+	function createPlayer(aX:Float, aY:Float, controller:PlayerInput)
+	{
+		var player = new Player(controller,aX, aY);
+		add(player);
+		players.add(player);
+	}
 	override public function update(elapsed:Float):Void 
 	{
 		super.update(elapsed);
@@ -86,9 +112,11 @@ class GameState extends FlxState
 	
 	function playerVsRocks(player:Player,object:Tossable) 
 	{
-		if(!player.isKnockOut()&&object.grab(player)){
+		if(!player.hasRock()&&!player.isKnockOut()&&object.grab(player)){
 			player.grabHead(object);
-		}else {
+		}else
+		if(object.isOnAir())
+		 {
 			player.knockOut(object);
 			object.bounce();
 		}
