@@ -2,6 +2,7 @@ package states;
 
 import flixel.FlxG;
 import flixel.FlxState;
+import flixel.input.gamepad.FlxGamepadInputID;
 
 import flixel.input.gamepad.FlxGamepad;
 
@@ -50,7 +51,7 @@ class PlayerSelection extends FlxState
 			
 		}
 		
-		if (gamepad.justPressed.START && activeGamepads.length >= 2 )
+		if (FlxG.gamepads.anyJustPressed( FlxGamepadInputID.START)&& gamepads.length >= 2 )
 		{
 			FlxG.switchState( new GameState(gamepads) );
 		}

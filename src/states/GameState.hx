@@ -37,7 +37,6 @@ class GameState extends FlxState
 		players = new FlxGroup();
 		throwables = new FlxGroup();
 		rocks = new FlxGroup();
-		joystickId = [0, 1, 2];
 		for (gamepadId in joystickId) 
 		{
 			createPlayer(100, 100, new Joystick(FlxG.gamepads.getByID(gamepadId)));
