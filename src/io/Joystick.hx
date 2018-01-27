@@ -39,7 +39,7 @@ class Joystick implements PlayerInput
 	
 	public function toss():Bool 
 	{
-		return gamepad.justPressed.A;
+		return gamepad.anyJustPressed.A;
 	}
 	
 }

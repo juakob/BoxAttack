@@ -5,6 +5,7 @@ import openfl.display.Sprite;
 import openfl.Lib;
 import openfl.events.Event;
 import states.GameState;
+import states.PlayerSelection;
 
 /**
  * ...
@@ -25,6 +26,7 @@ class Main extends Sprite
 	private function init(e:Event):Void 
 	{
 		removeEventListener(Event.ADDED_TO_STAGE, init);
+		//addChild(new FlxGame(1280, 720, PlayerSelection));
 		addChild(new FlxGame(1280, 720, GameState));
 	}
 
