@@ -34,8 +34,11 @@ class GameState extends FlxState
 	var walls:FlxGroup;
 	var rocks:FlxGroup;
 	var scores:Array<FlxText>;
+	var followRanking:Array<FlxText>;
+	var ranking:Array <Int>;
 	var player:Player;
 	var explosions:FlxGroup;
+	var playersList:Array<Player> = new Array();
 	
 	var playersAvatars: Array <FlxSprite>;
 	var skeleton:gameObjects.Skeleton;
@@ -53,8 +56,20 @@ class GameState extends FlxState
 		throwables = new FlxGroup();
 		rocks = new FlxGroup();
 		scores = new Array();
-		
+		ranking = new Array();
+		followRanking = new Array();
 		add(new FlxSprite(0, 0, "img/ground.png"));
+		for (j in 0...joystickId.length) 
+		{
+			var text = new FlxText(0, 0, 100, "1",15);
+			add(text);
+			followRanking.push(text);
+			ranking.push(1);
+			currentScores.push(0);
+			
+		}
+		
+		
 		playersAvatars = new Array();
 	
 		
@@ -155,6 +170,7 @@ class GameState extends FlxState
 		player.ID=aId;
 		add(player);
 		players.add(player);
+		playersList.push(player);
 	}
 	var winState:Bool;
 	override public function update(elapsed:Float):Void 
@@ -199,7 +215,7 @@ class GameState extends FlxState
 				head.player = null;
 			}
 		}
-		
+		calculateScore();
 	}
 	
 	function playerVsRocks(player:Player,object:Tossable) 
@@ -222,6 +238,36 @@ class GameState extends FlxState
 	public function playerVsHead(player:Player,object:Tossable) 
 	{
 		playerVsRocks(player, object);
+		
+	}
+	var currentScores:Array<Float> = new Array();
+	function calculateScore():Void
+	{
+		
+		for (j in 0...joystickId.length) 
+		{
+			currentScores[j] = playersList[j].score;
+		}
+		currentScores.sort(function(a, b):Int {
+		  if (a < b) return 1;
+		  else if (a > b) return -1;
+		  return 0;
+		});
+		for (j in 0...joystickId.length) 
+		{
+			var player:Player = playersList[j];
+			for (i in 0...joystickId.length) 
+			{
+				if (player.score == currentScores[i])
+				{
+					followRanking[j].text = i+1 + "#";
+					followRanking[j].x = player.x+player.width/2-5;
+					followRanking[j].y = player.y +player.height;
+					break;
+				}
+			} 
+		}
+		
 		
 	}
 	
