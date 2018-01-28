@@ -1,0 +1,275 @@
+﻿{"frames": {
+
+"Esqueleto_gnoclope0000":
+{
+	"frame": {"x":745,"y":643,"w":174,"h":316},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":370,"y":324,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0001":
+{
+	"frame": {"x":3872,"y":1578,"w":189,"h":310},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":366,"y":325,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0002":
+{
+	"frame": {"x":1869,"y":1631,"w":211,"h":305},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":355,"y":325,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0003":
+{
+	"frame": {"x":689,"y":1932,"w":233,"h":300},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":344,"y":325,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0004":
+{
+	"frame": {"x":1109,"y":1648,"w":255,"h":295},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":333,"y":326,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0005":
+{
+	"frame": {"x":2279,"y":1946,"w":277,"h":291},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":322,"y":325,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0006":
+{
+	"frame": {"x":365,"y":1666,"w":324,"h":286},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":295,"y":325,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0007":
+{
+	"frame": {"x":0,"y":1949,"w":327,"h":282},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":294,"y":324,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0008":
+{
+	"frame": {"x":2994,"y":1945,"w":343,"h":280},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":289,"y":321,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0009":
+{
+	"frame": {"x":0,"y":1666,"w":365,"h":283},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":278,"y":314,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0010":
+{
+	"frame": {"x":721,"y":1648,"w":388,"h":284},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":267,"y":308,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0011":
+{
+	"frame": {"x":1869,"y":1946,"w":410,"h":286},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":256,"y":301,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0012":
+{
+	"frame": {"x":2563,"y":1945,"w":431,"h":301},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":245,"y":281,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0013":
+{
+	"frame": {"x":1416,"y":1631,"w":453,"h":316},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":234,"y":261,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0014":
+{
+	"frame": {"x":2087,"y":1613,"w":476,"h":333},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":223,"y":240,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0015":
+{
+	"frame": {"x":2732,"y":1596,"w":498,"h":349},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":212,"y":220,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0016":
+{
+	"frame": {"x":3352,"y":1578,"w":520,"h":370},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":201,"y":200,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0017":
+{
+	"frame": {"x":3532,"y":0,"w":545,"h":380},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":188,"y":188,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0018":
+{
+	"frame": {"x":3508,"y":590,"w":570,"h":398},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":176,"y":175,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0019":
+{
+	"frame": {"x":3352,"y":1163,"w":595,"h":415},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":163,"y":163,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0020":
+{
+	"frame": {"x":2732,"y":1163,"w":620,"h":433},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":151,"y":150,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0021":
+{
+	"frame": {"x":2087,"y":1163,"w":645,"h":450},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":138,"y":138,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0022":
+{
+	"frame": {"x":1416,"y":1163,"w":671,"h":468},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":125,"y":125,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0023":
+{
+	"frame": {"x":721,"y":1163,"w":695,"h":485},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":113,"y":113,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0024":
+{
+	"frame": {"x":0,"y":1163,"w":721,"h":503},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":100,"y":100,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0025":
+{
+	"frame": {"x":0,"y":643,"w":745,"h":520},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":88,"y":88,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0026":
+{
+	"frame": {"x":921,"y":625,"w":771,"h":538},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":75,"y":75,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0027":
+{
+	"frame": {"x":1816,"y":608,"w":795,"h":555},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":63,"y":63,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0028":
+{
+	"frame": {"x":2687,"y":590,"w":821,"h":573},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":50,"y":50,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0029":
+{
+	"frame": {"x":2687,"y":0,"w":845,"h":590},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":38,"y":38,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0030":
+{
+	"frame": {"x":1816,"y":0,"w":871,"h":608},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":25,"y":25,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0031":
+{
+	"frame": {"x":921,"y":0,"w":895,"h":625},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":13,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+},
+"Esqueleto_gnoclope0032":
+{
+	"frame": {"x":0,"y":0,"w":921,"h":643},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":921,"h":643},
+	"sourceSize": {"w":921,"h":643}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "15.0.0.173",
+	"image": "mc_esqueleto_gnoclope.png",
+	"format": "RGBA8888",
+	"size": {"w":4096,"h":4096},
+	"scale": "1"
+}
+}

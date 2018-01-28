@@ -6,6 +6,7 @@ import flixel.FlxState;
 import flixel.group.FlxGroup;
 import flixel.text.FlxText;
 import gameObjects.Head;
+import gameObjects.Mushroom;
 import gameObjects.TossableImp;
 import gameObjects.Player;
 import gameObjects.Tossable;
@@ -30,6 +31,7 @@ class GameState extends FlxState
 	var rocks:FlxGroup;
 	var scores:Array<FlxText>;
 	var player:Player;
+	var explosions:FlxGroup;
 	
 	var playersAvatars: Array <FlxSprite>;
 	
@@ -58,12 +60,12 @@ class GameState extends FlxState
 			createPlayer(100, 100, new Joystick(FlxG.gamepads.getByID(gamepadId)), counter);
 			++counter;
 		}
-		
+		explosions = new FlxGroup();
 		for (i in 0...(joystickId.length+2)) 
 		{
 			createRock();
 		}
-		
+		add(explosions);
 
 
 		head = new Head(500, 500);
@@ -114,7 +116,7 @@ class GameState extends FlxState
 	
 	function createRock() 
 	{
-		var rock:TossableImp = new TossableImp(100+Math.random()*1000,100+Math.random()*500);
+		var rock:Mushroom = new Mushroom(100+Math.random()*1000,100+Math.random()*500,explosions);
 		rocks.add(rock);
 		throwables.add(rock);
 		add(rock);
