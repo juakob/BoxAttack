@@ -179,7 +179,8 @@ class GameState extends FlxState
 				skeleton = new Skeleton(head.player.x, head.player.y);
 				add(skeleton);
 				
-				
+				FlxG.sound.music.stop();
+				FlxG.sound.play("img/Victory.mp3");
 				switch head.player.ID
 				{
 					case 0:

@@ -14,7 +14,7 @@ class Head extends TossableImp
 
 	public function new(?X:Float=0, ?Y:Float=0) 
 	{
-		super(X, Y);
+		super(1280/2, 720/2);
 		scale.set(0.9, 0.9);
 		offset.set(5, 24);
 		var tex = FlxAtlasFrames.fromTexturePackerJson("img/Unicorn.png", "img/Unicorn.json");
