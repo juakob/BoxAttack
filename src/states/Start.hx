@@ -17,6 +17,8 @@ class Start extends FlxState
 	}
 	override public function create():Void 
 	{
+		add(new FlxSprite(0, 0, "img/StartBackground.jpg"));
+		
 		add(new FlxSprite(0, 0, "img/titulo fonteado 3.png"));
 		FlxG.sound.playMusic("img/UnicornioAcidezSymph.mp3");
 	}
