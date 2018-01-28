@@ -159,9 +159,14 @@ class GameState extends FlxState
 		if (head.player != null)
 		{
 			head.player.incrementScore(elapsed);
-			scores[head.player.ID].text = head.player.score+"";
+			scores[head.player.ID].text = Std.int((head.player.score/2500)*100)+"%";
 			if (head.player.score >= 2500)
 			{
+				
+				skeleton = new Skeleton(head.player.x, head.player.y);
+				add(skeleton);
+				
+				
 				switch player.ID
 				{
 					case 0:
@@ -174,8 +179,6 @@ class GameState extends FlxState
 						add(new FlxSprite(0, 0, "img/win title green.png"));
 					default:
 				}
-				skeleton = new Skeleton(head.player.x, head.player.y);
-				add(skeleton);
 				head.player.kill();
 				head.kill();
 				head.player = null;
