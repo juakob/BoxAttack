@@ -48,6 +48,8 @@ class PlayerSelection extends FlxState
 		playersAvatars.push(new FlxSprite(650, 200, "img/GnoSelect_Yellow.png") );
 		playersAvatars.push(new FlxSprite(850, 200, "img/GnoSelect_Green.png") );
 		
+		add(new FlxSprite(0, 0, "img/PlayerSelectBackground.png"));
+		
 		add( playersAvatarsAlpha[0] );
 		add( playersAvatarsAlpha[1] );
 		add( playersAvatarsAlpha[2] );
