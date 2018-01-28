@@ -1,5 +1,6 @@
 package states;
 
+import flash.geom.Point;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -59,9 +60,15 @@ class GameState extends FlxState
 		
 		
 		var counter:Int = 0;
+		var positions:Array<Point> = new Array();
+		positions.push(new Point(100, 100)); 
+		positions.push(new Point(1280 - 200, 720 - 200));
+		positions.push(new Point(1280 - 200, 100));
+		positions.push(new Point(100, 720 - 200)); 
 		for (gamepadId in joystickId) 
 		{
-			createPlayer(100, 100, new Joystick(FlxG.gamepads.getByID(gamepadId)), counter);
+			
+			createPlayer(positions[counter].x, positions[counter].y, new Joystick(FlxG.gamepads.getByID(gamepadId)), counter);
 			++counter;
 		}
 		explosions = new FlxGroup();
