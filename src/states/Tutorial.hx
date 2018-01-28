@@ -1,4 +1,5 @@
 package states;
+
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -8,7 +9,7 @@ import flixel.input.gamepad.FlxGamepadInputID;
  * ...
  * @author Joaquin
  */
-class Start extends FlxState
+class Tutorial extends FlxState
 {
 
 	public function new() 
@@ -17,14 +18,20 @@ class Start extends FlxState
 	}
 	override public function create():Void 
 	{
-		add(new FlxSprite(0, 0, "img/titulo fonteado 3.png"));
-		FlxG.sound.playMusic("img/UnicornioAcidezSymph.mp3");
+		add(new FlxSprite(0, 0, "img/tutorial.png"));
+		
 	}
+	var timer:Float = 0;
+	
 	override public function update(elapsed:Float):Void 
 	{
-		if (FlxG.gamepads.anyJustPressed(FlxGamepadInputID.START))
+		timer += elapsed;
+		if (timer >10) {
+			FlxG.switchState(new PlayerSelection()); 
+		}
+		if (FlxG.gamepads.anyJustPressed(FlxGamepadInputID.A))
 		{
-			FlxG.switchState(new Tutorial()); 
+			FlxG.switchState(new PlayerSelection()); 
 		}
 		super.update(elapsed);
 	}

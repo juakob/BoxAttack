@@ -46,7 +46,7 @@ class GameState extends FlxState
 	
 	override public function create():Void 
 	{
-		
+		FlxG.sound.playMusic("img/UnicornioAcidez.mp3");
 		players = new FlxGroup();
 		throwables = new FlxGroup();
 		rocks = new FlxGroup();
@@ -160,8 +160,20 @@ class GameState extends FlxState
 		{
 			head.player.incrementScore(elapsed);
 			scores[head.player.ID].text = head.player.score+"";
-			if (head.player.score >= 5000)
+			if (head.player.score >= 2500)
 			{
+				switch player.ID
+				{
+					case 0:
+						add(new FlxSprite(0, 0, "img/win title blue.png"));
+					case 1: 
+						add(new FlxSprite(0, 0, "img/win title red.png"));
+					case 2: 
+						add(new FlxSprite(0, 0, "img/win title yellow.png"));
+					case 3: 
+						add(new FlxSprite(0, 0, "img/win title green.png"));
+					default:
+				}
 				skeleton = new Skeleton(head.player.x, head.player.y);
 				add(skeleton);
 				head.player.kill();
