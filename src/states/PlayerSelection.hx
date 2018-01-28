@@ -35,7 +35,7 @@ class PlayerSelection extends FlxState
 		playersAvatars.push(new FlxSprite(880, 250, "img/GnoAvatar_Green.png") );
 		
 		
-		FlxG.sound.playMusic("img/UnicornioAcidez.mp3");
+		
 	}
 	
 	override public function update(elapsed:Float):Void 

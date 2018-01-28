@@ -65,9 +65,19 @@ class Player extends FlxSprite
 		}
 		animation.addByNames(name, currentFrames, 24,loop);
 	}
-	
+	public function stop():Void
+	{
+		stoped = true;
+	}
+	var stoped:Bool;
 	override public function update(elapsed:Float):Void 
 	{
+		if (stoped) {
+			velocity.set();
+			acceleration.set();
+			animation.play("idleLeft");
+			super.update(elapsed);
+		}
 		var direcction:Point = new Point();
 		knockOutTime-= elapsed;
 		if (knockOutTime > 0) {
