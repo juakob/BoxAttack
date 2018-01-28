@@ -16,7 +16,10 @@ class PlayerSelection extends FlxState
 	
 	var gamepads: Array <Int>;
 	
+	var playersAvatarsFrames: Array <FlxSprite>;
+	var playersAvatarsAlpha: Array <FlxSprite>;
 	var playersAvatars: Array <FlxSprite>;
+	
 	
 	public function new() 
 	{
@@ -27,13 +30,30 @@ class PlayerSelection extends FlxState
 	{
 		gamepads = new Array ();
 		
+		playersAvatarsFrames = new Array();
+		playersAvatarsAlpha = new Array();
 		playersAvatars = new Array();
-	
-		playersAvatars.push(new FlxSprite(280, 250, "img/GnoAvatar_Blue.png") );
-		playersAvatars.push(new FlxSprite(480, 250, "img/GnoAvatar_Red.png") );
-		playersAvatars.push(new FlxSprite(680, 250, "img/GnoAvatar_Yellow.png") );
-		playersAvatars.push(new FlxSprite(880, 250, "img/GnoAvatar_Green.png") );
 		
+		
+		playersAvatarsFrames.push(new FlxSprite(250, 120, "img/GnoSelectFrame_Blue.png") );
+		playersAvatarsFrames.push(new FlxSprite(450, 120, "img/GnoSelectFrame_Red.png") );
+		playersAvatarsFrames.push(new FlxSprite(650, 120, "img/GnoSelectFrame_Yellow.png") );
+		playersAvatarsFrames.push(new FlxSprite(850, 120, "img/GnoSelectFrame_Green.png") );	
+		
+		playersAvatarsAlpha.push(new FlxSprite(250, 200, "img/GnoSelect_BlueAlpha.png") );
+		playersAvatarsAlpha.push(new FlxSprite(450, 200, "img/GnoSelect_BlueAlpha.png") );
+		playersAvatarsAlpha.push(new FlxSprite(650, 200, "img/GnoSelect_BlueAlpha.png") );
+		playersAvatarsAlpha.push(new FlxSprite(850, 200, "img/GnoSelect_BlueAlpha.png") );
+		
+		playersAvatars.push(new FlxSprite(250, 200, "img/GnoSelect_Blue.png") );
+		playersAvatars.push(new FlxSprite(450, 200, "img/GnoSelect_Blue.png") );
+		playersAvatars.push(new FlxSprite(650, 200, "img/GnoSelect_Blue.png") );
+		playersAvatars.push(new FlxSprite(850, 200, "img/GnoSelect_Blue.png") );
+		
+		add( playersAvatarsAlpha[0] );
+		add( playersAvatarsAlpha[1] );
+		add( playersAvatarsAlpha[2] );
+		add( playersAvatarsAlpha[3] );
 		
 		FlxG.sound.playMusic("img/UnicornioAcidez.mp3");
 	}
@@ -50,12 +70,18 @@ class PlayerSelection extends FlxState
 			if (gamepad.justPressed.A)
 			{
 				if ( gamepads.indexOf( gamepad.id ) ==-1)
+
 				{
 					gamepads.push(gamepad.id);	
 					
+					//add( playersAvatarsFrames[gamepad.id] );
+					
+					remove(playersAvatarsAlpha[gamepad.id] );
+					
+					add( playersAvatarsFrames [gamepad.id] );
 					add( playersAvatars[gamepad.id] );
 					
-
+				
 				}
 			} 
 			

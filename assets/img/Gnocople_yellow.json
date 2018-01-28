@@ -1,0 +1,115 @@
+﻿{"frames": {
+
+"mc_cuerpo0000":
+{
+	"frame": {"x":782,"y":737,"w":390,"h":358},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":24,"y":14,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0001":
+{
+	"frame": {"x":0,"y":377,"w":391,"h":361},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":20,"y":12,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0002":
+{
+	"frame": {"x":401,"y":373,"w":392,"h":364},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":10,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0003":
+{
+	"frame": {"x":1593,"y":370,"w":394,"h":368},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":7,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0004":
+{
+	"frame": {"x":1593,"y":0,"w":396,"h":370},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":5,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0005":
+{
+	"frame": {"x":401,"y":0,"w":398,"h":373},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":3,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0006":
+{
+	"frame": {"x":0,"y":0,"w":401,"h":377},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0007":
+{
+	"frame": {"x":799,"y":0,"w":398,"h":373},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":3,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0008":
+{
+	"frame": {"x":1197,"y":0,"w":396,"h":371},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":5,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0009":
+{
+	"frame": {"x":1197,"y":371,"w":394,"h":368},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":7,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0010":
+{
+	"frame": {"x":793,"y":373,"w":392,"h":364},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":10,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0011":
+{
+	"frame": {"x":391,"y":737,"w":391,"h":361},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":20,"y":12,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+},
+"mc_cuerpo0012":
+{
+	"frame": {"x":782,"y":737,"w":390,"h":358},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":24,"y":14,"w":414,"h":377},
+	"sourceSize": {"w":414,"h":377}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "15.0.0.173",
+	"image": "Gnocople_yellow.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1"
+}
+}
