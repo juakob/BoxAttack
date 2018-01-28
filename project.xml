@@ -12,7 +12,7 @@
 	<app swf-version="11.8" if="flash" />
 	<window width="1280" height="720" unless="mobile" />
 	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
-	
+
 	<!-- classpath, haxe libs -->
 	<source path="src" />
 	<haxelib name="openfl" />
