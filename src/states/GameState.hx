@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
+import flixel.text.FlxText;
 import gameObjects.Head;
 import gameObjects.TossableImp;
 import gameObjects.Player;
@@ -31,33 +32,36 @@ class GameState extends FlxState
 	var head:Head;
 	var walls:FlxGroup;
 	var rocks:FlxGroup;
+	var scores:Array<FlxText>;
 	
 	override public function create():Void 
 	{
 		players = new FlxGroup();
 		throwables = new FlxGroup();
 		rocks = new FlxGroup();
+		scores = new Array();
+		
+		
+		var counter:Int = 0;
 		for (gamepadId in joystickId) 
 		{
-			createPlayer(100, 100, new Joystick(FlxG.gamepads.getByID(gamepadId)));
-			
+			createPlayer(100, 100, new Joystick(FlxG.gamepads.getByID(gamepadId)), counter);
+			++counter;
 		}
 		for (i in 0...(joystickId.length+2)) 
 		{
 			createRock();
+			var text = new FlxText(100 + (1180 / 4) * i, 50, 100, "0", 20);
+			scores.push(text);
+			add(text);
+			
 		}
 		
-		
-		
+
 
 		head = new Head(500, 500);
 		add(head);
 		throwables.add(head);
-		
-		
-		
-		
-		
 		
 		
 		walls = new FlxGroup();
@@ -93,9 +97,10 @@ class GameState extends FlxState
 		throwables.add(rock);
 		add(rock);
 	}
-	function createPlayer(aX:Float, aY:Float, controller:PlayerInput)
+	function createPlayer(aX:Float, aY:Float, controller:PlayerInput,aId:Int)
 	{
-		var player = new Player(controller,aX, aY);
+		var player = new Player(controller, aX, aY);
+		player.ID=aId;
 		add(player);
 		players.add(player);
 	}
@@ -105,7 +110,13 @@ class GameState extends FlxState
 		FlxG.collide(players, head, playerVsHead);
 		FlxG.collide(players, rocks, playerVsRocks);
 		FlxG.collide(walls, players);
-		FlxG.collide(walls, throwables,throwableVsWall);
+		FlxG.collide(walls, throwables, throwableVsWall);
+		
+		if (head.player != null)
+		{
+			head.player.incrementScore(elapsed);
+			scores[head.player.ID].text = head.player.score+"";
+		}
 		
 	}
 	

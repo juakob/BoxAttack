@@ -26,6 +26,7 @@ class PlayerSelection extends FlxState
 		
 		//debug
 		FlxG.log.redirectTraces = true;	
+		FlxG.sound.playMusic("img/UnicornioAcidez.mp3");
 	}
 	
 	override public function update(elapsed:Float):Void 

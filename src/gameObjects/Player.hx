@@ -6,6 +6,7 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.math.FlxPoint;
 import flixel.system.FlxAssets.FlxGraphicAsset;
+import flixel.util.FlxColor;
 import gameObjects.TossableImp;
 import gameObjects.Tossable;
 import io.PlayerInput;
@@ -16,7 +17,7 @@ import io.PlayerInput;
  */
 class Player extends FlxSprite
 {
-	static public inline var MAX_ACCELERATION:Float = 1500;
+	static public inline var MAX_ACCELERATION:Float = 2000;
 
 	var grabedObject:Tossable;
 	var knockOutTime:Float=0;
@@ -29,9 +30,11 @@ class Player extends FlxSprite
 	public function new(aPlayerInput:PlayerInput,?X:Float=0, ?Y:Float=0) 
 	{
 		super(X, Y);
-		makeGraphic(50, 50);
+		makeGraphic(50, 50, FlxColor.fromRGB(50 + Std.int(Math.random() * 200),
+											50 + Std.int(Math.random() * 200),
+											50+Std.int(Math.random()*200)));
 		drag.set(1000, 1000);
-		maxVelocity.set(300, 300);
+		maxVelocity.set(400, 400);
 		controller = aPlayerInput;
 	}
 	
@@ -47,7 +50,7 @@ class Player extends FlxSprite
 			return;
 		}
 		elasticity = 0;
-		maxVelocity.set(200, 200);
+		maxVelocity.set(300, 300);
 		drag.set(1000, 1000);
 		if (controller.left())
 		{
@@ -87,7 +90,7 @@ class Player extends FlxSprite
 	
 	function throwObject() 
 	{
-		
+		timeInterval = 0;
 		if(facing==FlxObject.UP){
 			grabedObject.toss(0,-1);
 		}else
@@ -114,6 +117,7 @@ class Player extends FlxSprite
 	
 	public function knockOut(object:Tossable) 
 	{
+		timeInterval = 0;
 		acceleration.set(0, 0);
 		knockOutTime = KNOCKOUT_TOTALTIME;
 		if(grabedObject!=null){
@@ -147,6 +151,17 @@ class Player extends FlxSprite
 	public function hasRock() 
 	{
 		return grabedObject != null;
+	}
+	public var score(default,null):Float=0;
+	var timeInterval:Float=0;
+	public function incrementScore(elapsed:Float) 
+	{
+		
+		timeInterval += elapsed;
+		if (timeInterval > 0.5)
+		{
+			score+= 1;
+		}
 	}
 	
 }

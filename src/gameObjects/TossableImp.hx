@@ -13,7 +13,7 @@ import gameObjects.Player;
 class TossableImp extends FlxSprite implements Tossable
 {
 	static public inline var MAX_VELOCIY:Float = 1000;
-	private var player:Player;
+	public var player:Player;
 	var flying:Bool;
 	public function new(?X:Float=0, ?Y:Float=0) 
 	{
