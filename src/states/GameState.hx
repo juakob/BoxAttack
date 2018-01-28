@@ -7,6 +7,7 @@ import flixel.group.FlxGroup;
 import flixel.text.FlxText;
 import gameObjects.Head;
 import gameObjects.Mushroom;
+import gameObjects.Skeleton;
 import gameObjects.TossableImp;
 import gameObjects.Player;
 import gameObjects.Tossable;
@@ -14,6 +15,7 @@ import io.Joystick;
 import io.Keyboard1;
 import io.Keyboard2;
 import io.PlayerInput;
+import openfl.geom.ColorTransform;
 
 /**
  * ...
@@ -103,7 +105,7 @@ class GameState extends FlxState
 		playersAvatars.push(new FlxSprite(295 * 1 + 80, 30, "img/GnoAvatar_Red.png"			) );
 		playersAvatars.push(new FlxSprite(295 * 2 + 80, 30, "img/GnoAvatar_Yellow.png"		) );
 		playersAvatars.push(new FlxSprite(295 * 3 + 80, 30, "img/GnoAvatar_Green.png"		) );
-		for (i in 0...(joystickId.length+2)) 
+		for (i in 0...(joystickId.length)) 
 		{
 			var text = new FlxText(100 + (1180 / 4) * i + 60, 50, 100, "0", 20);
 			scores.push(text);
@@ -123,7 +125,24 @@ class GameState extends FlxState
 	}
 	function createPlayer(aX:Float, aY:Float, controller:PlayerInput,aId:Int)
 	{
-		player = new Player(controller, aX, aY);
+		var colorTrans:String ="red";
+		if (aId == 0)
+		{
+			colorTrans = "blue";
+		}
+		if (aId == 1)
+		{
+			colorTrans = "red";
+		}
+		if (aId == 2)
+		{
+			colorTrans = "yellow";
+		}
+		if (aId == 3)
+		{
+			colorTrans = "green";
+		}
+		player = new Player(controller,colorTrans,aX, aY);
 		player.ID=aId;
 		add(player);
 		players.add(player);
@@ -140,6 +159,14 @@ class GameState extends FlxState
 		{
 			head.player.incrementScore(elapsed);
 			scores[head.player.ID].text = head.player.score+"";
+			if (head.player.score >= 5000)
+			{
+				
+				add(new Skeleton(head.player.x, head.player.y));
+				head.player.kill();
+				head.kill();
+				head.player = null;
+			}
 		}
 		
 	}

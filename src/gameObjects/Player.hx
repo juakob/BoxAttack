@@ -1,5 +1,6 @@
 package gameObjects;
 
+import flash.geom.ColorTransform;
 import flash.geom.Point;
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -28,7 +29,7 @@ class Player extends FlxSprite
 	var controller:PlayerInput;
 	
 	
-	public function new(aPlayerInput:PlayerInput,?X:Float=0, ?Y:Float=0) 
+	public function new(aPlayerInput:PlayerInput,color:String,?X:Float=0, ?Y:Float=0) 
 	{
 		super(X, Y);
 		/*makeGraphic(50, 50, FlxColor.fromRGB(50 + Std.int(Math.random() * 200),
@@ -37,27 +38,21 @@ class Player extends FlxSprite
 		drag.set(1000, 1000);
 		maxVelocity.set(400, 400);
 		controller = aPlayerInput;
-		var tex = FlxAtlasFrames.fromTexturePackerJson("img/Gnomo_Animate.png", "img/Gnomo_Animate.json");
+		var tex = FlxAtlasFrames.fromTexturePackerJson("img/Gnomo_Animate_"+color+".png", "img/Gnomo_Animate.json");
 		frames = tex;
 		resetFrameSize();
 		width = 60;
 		offset.x = 25;
-		var names:Array<String> = new Array();
-		for (i in 0...89) 
-		{
-			names.push("Gnomo00" + i);
-		}
+		
 		createAnimation("walkRight", 0, 16, true);
 		createAnimation("walkLeft", 17, 33, true);
 		createAnimation("walkDown", 34, 42, true);
 		createAnimation("walkUp", 43, 51, true);
 		createAnimation("idleRight", 52, 60, true);
-		createAnimation("idelLeft", 61, 70, true);
+		createAnimation("idleLeft", 61, 70, true);
 		createAnimation("tossRight", 71, 79, false);
 		createAnimation("tossLeft", 80, 88, false);
-		
-		
-		
+	
 		
 	}
 	function createAnimation(name:String, from:Int, to:Int,loop:Bool):Void
@@ -65,7 +60,7 @@ class Player extends FlxSprite
 		var currentFrames:Array<String> = new Array();
 		for (i in from...(to+1)) 
 		{
-			currentFrames.push("Gnomo00" + i);
+			currentFrames.push("Si00" + i);
 		}
 		animation.addByNames(name, currentFrames, 24,loop);
 	}
@@ -87,23 +82,22 @@ class Player extends FlxSprite
 		if (controller.left())
 		{
 			direcction.x -= 1;
-			animation.play("walkLeft");
 			
+			facing = FlxObject.LEFT;
 		}
 		if (controller.right())
 		{
 			direcction.x += 1;
-			animation.play("walkRight");
+			facing = FlxObject.RIGHT;
 		}
 		if (controller.up())
 		{
 			direcction.y -= 1;
-			animation.play("walkUp");
+			
 		}
 		if (controller.down())
 		{
 			direcction.y += 1;
-			animation.play("walkDown");
 		}
 		if (direcction.length != 0)
 		{
@@ -127,6 +121,34 @@ class Player extends FlxSprite
 		acceleration.x = direcction.x;
 		acceleration.y = direcction.y;
 		super.update(elapsed);
+		
+		if (Math.abs(velocity.x) > Math.abs(velocity.y)) {
+			if (velocity.x > 0)
+			{
+				animation.play("walkRight");
+			}else {
+				animation.play("walkLeft");
+			}
+		}else {
+			if (velocity.y > 0)
+			{
+				animation.play("walkDown");
+			}else {
+				animation.play("walkUp");
+			}
+		}
+		flipX = false;
+		if (velocity.x == 0 && velocity.y == 0)
+		{
+			if (facing == FlxObject.RIGHT)
+			{
+				animation.play("idleRight");
+				
+			}else {
+				animation.play("idleLeft");
+				flipX = true;
+			}
+		}
 	}
 	
 	function throwObject() 
