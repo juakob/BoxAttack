@@ -1,6 +1,7 @@
 package states;
 
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.input.gamepad.FlxGamepadInputID;
 
@@ -15,6 +16,8 @@ class PlayerSelection extends FlxState
 	
 	var gamepads: Array <Int>;
 	
+	var playersAvatars: Array <FlxSprite>;
+	
 	public function new() 
 	{
 		super();
@@ -24,8 +27,14 @@ class PlayerSelection extends FlxState
 	{
 		gamepads = new Array ();
 		
-		//debug
-		FlxG.log.redirectTraces = true;	
+		playersAvatars = new Array();
+	
+		playersAvatars.push(new FlxSprite(280, 250, "img/GnoAvatar_Blue.png") );
+		playersAvatars.push(new FlxSprite(480, 250, "img/GnoAvatar_Red.png") );
+		playersAvatars.push(new FlxSprite(680, 250, "img/GnoAvatar_Yellow.png") );
+		playersAvatars.push(new FlxSprite(880, 250, "img/GnoAvatar_Green.png") );
+		
+		
 		FlxG.sound.playMusic("img/UnicornioAcidez.mp3");
 	}
 	
@@ -44,9 +53,9 @@ class PlayerSelection extends FlxState
 				{
 					gamepads.push(gamepad.id);	
 					
-					//debug
-					trace (gamepad.id);
+					add( playersAvatars[gamepad.id] );
 					
+
 				}
 			} 
 			
