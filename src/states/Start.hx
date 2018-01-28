@@ -23,7 +23,7 @@ class Start extends FlxState
 	override public function update(elapsed:Float):Void 
 	{
 		if (FlxG.gamepads.anyJustPressed(FlxGamepadInputID.START))
-		{
+		{	
 			FlxG.switchState(new Tutorial()); 
 		}
 		super.update(elapsed);
