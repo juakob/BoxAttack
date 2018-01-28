@@ -21,6 +21,8 @@ class PlayerSelection extends FlxState
 	var playersAvatars: Array <FlxSprite>;
 	
 	
+	
+	
 	public function new() 
 	{
 		super();
