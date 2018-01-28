@@ -20,9 +20,6 @@ class PlayerSelection extends FlxState
 	var playersAvatarsAlpha: Array <FlxSprite>;
 	var playersAvatars: Array <FlxSprite>;
 	
-	
-	
-	
 	public function new() 
 	{
 		super();
@@ -35,7 +32,6 @@ class PlayerSelection extends FlxState
 		playersAvatarsFrames = new Array();
 		playersAvatarsAlpha = new Array();
 		playersAvatars = new Array();
-		
 		
 		playersAvatarsFrames.push(new FlxSprite(250, 110, "img/GnoSelectFrame_Blue.png") );
 		playersAvatarsFrames.push(new FlxSprite(450, 110, "img/GnoSelectFrame_Red.png") );
@@ -56,8 +52,6 @@ class PlayerSelection extends FlxState
 		add( playersAvatarsAlpha[1] );
 		add( playersAvatarsAlpha[2] );
 		add( playersAvatarsAlpha[3] );
-		
-		FlxG.sound.playMusic("img/UnicornioAcidez.mp3");
 	}
 	
 	override public function update(elapsed:Float):Void 
@@ -76,13 +70,15 @@ class PlayerSelection extends FlxState
 				{
 					gamepads.push(gamepad.id);	
 					
-					//add( playersAvatarsFrames[gamepad.id] );
 					
 					remove(playersAvatarsAlpha[gamepad.id] );
 					
 					add( playersAvatarsFrames [gamepad.id] );
 					add( playersAvatars[gamepad.id] );
 					
+					
+					var sndPath:String = new String ("img/Gnome" + Std.int(Math.random() * 7 + 1) + ".mp3"); 
+					FlxG.sound.play(sndPath);
 				
 				}
 			} 
