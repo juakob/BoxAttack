@@ -50,10 +50,7 @@ class GameState extends FlxState
 		add(new FlxSprite(0, 0, "img/ground.png"));
 		playersAvatars = new Array();
 	
-		playersAvatars.push(new FlxSprite(295 * 0 + 80, 30, "img/GnoAvatar_Blue.png"		) );
-		playersAvatars.push(new FlxSprite(295 * 1 + 80, 30, "img/GnoAvatar_Red.png"			) );
-		playersAvatars.push(new FlxSprite(295 * 2 + 80, 30, "img/GnoAvatar_Yellow.png"		) );
-		playersAvatars.push(new FlxSprite(295 * 3 + 80, 30, "img/GnoAvatar_Green.png"		) );
+		
 		
 		var counter:Int = 0;
 		for (gamepadId in joystickId) 
@@ -61,15 +58,10 @@ class GameState extends FlxState
 			createPlayer(100, 100, new Joystick(FlxG.gamepads.getByID(gamepadId)), counter);
 			++counter;
 		}
+		
 		for (i in 0...(joystickId.length+2)) 
 		{
 			createRock();
-			var text = new FlxText(100 + (1180 / 4) * i + 60, 50, 100, "0", 20);
-			scores.push(text);
-			add(text);
-			
-			add( playersAvatars[i] );
-			
 		}
 		
 
@@ -105,6 +97,19 @@ class GameState extends FlxState
 		walls.add(down);
 		
 		add(new FlxSprite(0, 0, "img/frontGround.png"));
+		playersAvatars.push(new FlxSprite(295 * 0 + 80, 30, "img/GnoAvatar_Blue.png"		) );
+		playersAvatars.push(new FlxSprite(295 * 1 + 80, 30, "img/GnoAvatar_Red.png"			) );
+		playersAvatars.push(new FlxSprite(295 * 2 + 80, 30, "img/GnoAvatar_Yellow.png"		) );
+		playersAvatars.push(new FlxSprite(295 * 3 + 80, 30, "img/GnoAvatar_Green.png"		) );
+		for (i in 0...(joystickId.length+2)) 
+		{
+			var text = new FlxText(100 + (1180 / 4) * i + 60, 50, 100, "0", 20);
+			scores.push(text);
+			add(text);
+			
+			add( playersAvatars[i] );
+			
+		}
 	}
 	
 	function createRock() 
