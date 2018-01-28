@@ -52,6 +52,9 @@ class PlayerSelection extends FlxState
 		add( playersAvatarsAlpha[1] );
 		add( playersAvatarsAlpha[2] );
 		add( playersAvatarsAlpha[3] );
+		
+		var sndPath:String = new String ("img/Gnome" + Std.int(Math.random() * 7 + 1) + ".mp3"); 
+		FlxG.sound.play(sndPath);
 	}
 	
 	override public function update(elapsed:Float):Void 

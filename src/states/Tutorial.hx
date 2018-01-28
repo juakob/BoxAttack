@@ -18,6 +18,9 @@ class Tutorial extends FlxState
 	}
 	override public function create():Void 
 	{
+		var sndPath:String = new String ("img/Gnome" + Std.int(Math.random() * 7 + 1) + ".mp3"); 
+		FlxG.sound.play(sndPath);
+		
 		add(new FlxSprite(0, 0, "img/tutorial.png"));
 		
 	}
@@ -30,7 +33,7 @@ class Tutorial extends FlxState
 			FlxG.switchState(new PlayerSelection()); 
 		}
 		if (FlxG.gamepads.anyJustPressed(FlxGamepadInputID.A))
-		{
+		{	
 			FlxG.switchState(new PlayerSelection()); 
 		}
 		super.update(elapsed);
