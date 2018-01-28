@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
+import flixel.input.gamepad.FlxGamepadInputID;
 import flixel.text.FlxText;
 import gameObjects.Head;
 import gameObjects.Mushroom;
@@ -148,6 +149,7 @@ class GameState extends FlxState
 		add(player);
 		players.add(player);
 	}
+	var winState:Bool;
 	override public function update(elapsed:Float):Void 
 	{
 		super.update(elapsed);
@@ -155,7 +157,11 @@ class GameState extends FlxState
 		FlxG.collide(players, rocks, playerVsRocks);
 		FlxG.collide(walls, players);
 		FlxG.collide(walls, throwables, throwableVsWall);
-		
+		if (winState)
+		{
+			if (FlxG.gamepads.anyJustPressed(FlxGamepadInputID.BACK)) FlxG.switchState(new Start());
+			if (FlxG.gamepads.anyJustPressed(FlxGamepadInputID.START)) FlxG.switchState(new GameState(joystickId));
+		}
 		if (head.player != null)
 		{
 			head.player.incrementScore(elapsed);
@@ -167,7 +173,7 @@ class GameState extends FlxState
 				add(skeleton);
 				
 				
-				switch player.ID
+				switch head.player.ID
 				{
 					case 0:
 						add(new FlxSprite(0, 0, "img/win title blue.png"));
@@ -179,6 +185,7 @@ class GameState extends FlxState
 						add(new FlxSprite(0, 0, "img/win title green.png"));
 					default:
 				}
+				winState = true;
 				head.player.kill();
 				head.kill();
 				head.player = null;

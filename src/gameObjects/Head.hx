@@ -1,6 +1,8 @@
 package gameObjects;
+import flixel.FlxG;
 import flixel.graphics.atlas.FlxAtlas;
 import flixel.graphics.frames.FlxAtlasFrames;
+import gameObjects.Player;
 import openfl.Assets;
 
 /**
@@ -37,5 +39,10 @@ class Head extends TossableImp
 		velocity.y =velocity.y;*/
 		drag.set(300, 300);
 	}
-	
+	override public function grab(aPlayer:Player):Bool 
+	{
+		var sndPath:String = new String ("img/Gnome" + Std.int(Math.random() * 7 + 1) + ".mp3"); 
+		FlxG.sound.play(sndPath);
+		return super.grab(aPlayer);
+	}
 }
