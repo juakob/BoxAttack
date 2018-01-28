@@ -35,20 +35,20 @@ class PlayerSelection extends FlxState
 		playersAvatars = new Array();
 		
 		
-		playersAvatarsFrames.push(new FlxSprite(250, 120, "img/GnoSelectFrame_Blue.png") );
-		playersAvatarsFrames.push(new FlxSprite(450, 120, "img/GnoSelectFrame_Red.png") );
-		playersAvatarsFrames.push(new FlxSprite(650, 120, "img/GnoSelectFrame_Yellow.png") );
-		playersAvatarsFrames.push(new FlxSprite(850, 120, "img/GnoSelectFrame_Green.png") );	
+		playersAvatarsFrames.push(new FlxSprite(250, 110, "img/GnoSelectFrame_Blue.png") );
+		playersAvatarsFrames.push(new FlxSprite(450, 110, "img/GnoSelectFrame_Red.png") );
+		playersAvatarsFrames.push(new FlxSprite(650, 110, "img/GnoSelectFrame_Yellow.png") );
+		playersAvatarsFrames.push(new FlxSprite(850, 110, "img/GnoSelectFrame_Green.png") );	
 		
 		playersAvatarsAlpha.push(new FlxSprite(250, 200, "img/GnoSelect_BlueAlpha.png") );
-		playersAvatarsAlpha.push(new FlxSprite(450, 200, "img/GnoSelect_BlueAlpha.png") );
-		playersAvatarsAlpha.push(new FlxSprite(650, 200, "img/GnoSelect_BlueAlpha.png") );
-		playersAvatarsAlpha.push(new FlxSprite(850, 200, "img/GnoSelect_BlueAlpha.png") );
+		playersAvatarsAlpha.push(new FlxSprite(450, 200, "img/GnoSelect_RedAlpha.png") );
+		playersAvatarsAlpha.push(new FlxSprite(650, 200, "img/GnoSelect_YellowAlpha.png") );
+		playersAvatarsAlpha.push(new FlxSprite(850, 200, "img/GnoSelect_GreenAlpha.png") );
 		
 		playersAvatars.push(new FlxSprite(250, 200, "img/GnoSelect_Blue.png") );
-		playersAvatars.push(new FlxSprite(450, 200, "img/GnoSelect_Blue.png") );
-		playersAvatars.push(new FlxSprite(650, 200, "img/GnoSelect_Blue.png") );
-		playersAvatars.push(new FlxSprite(850, 200, "img/GnoSelect_Blue.png") );
+		playersAvatars.push(new FlxSprite(450, 200, "img/GnoSelect_Red.png") );
+		playersAvatars.push(new FlxSprite(650, 200, "img/GnoSelect_Yellow.png") );
+		playersAvatars.push(new FlxSprite(850, 200, "img/GnoSelect_Green.png") );
 		
 		add( playersAvatarsAlpha[0] );
 		add( playersAvatarsAlpha[1] );
