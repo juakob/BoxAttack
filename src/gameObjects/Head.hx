@@ -16,6 +16,8 @@ class Head extends TossableImp
 		var tex = FlxAtlasFrames.fromTexturePackerJson("img/Gnocople.png", "img/Gnocople.json");
 		frames = tex;
 		resetFrameSize();
+		width = 70;
+		height = 70;
 		var names:Array<String> = new Array();
 		for (i in 0...8) 
 		{

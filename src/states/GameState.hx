@@ -33,14 +33,17 @@ class GameState extends FlxState
 	var walls:FlxGroup;
 	var rocks:FlxGroup;
 	var scores:Array<FlxText>;
+	var player:Player;
 	
 	override public function create():Void 
 	{
+		
 		players = new FlxGroup();
 		throwables = new FlxGroup();
 		rocks = new FlxGroup();
 		scores = new Array();
 		
+		add(new FlxSprite(0, 0, "img/ground.png"));
 		
 		var counter:Int = 0;
 		for (gamepadId in joystickId) 
@@ -77,9 +80,9 @@ class GameState extends FlxState
 		right.immovable = true;
 		walls.add(right);
 		
-		var top = new FlxSprite( -10, -10);
+		var top = new FlxSprite( 10, -10);
 		top.width = 1280+20;
-		top.height = 10;
+		top.height = 100;
 		top.immovable = true;
 		walls.add(top);
 		
@@ -88,6 +91,8 @@ class GameState extends FlxState
 		down.height = 10;
 		down.immovable = true;
 		walls.add(down);
+		
+		add(new FlxSprite(0, 0, "img/frontGround.png"));
 	}
 	
 	function createRock() 
@@ -99,7 +104,7 @@ class GameState extends FlxState
 	}
 	function createPlayer(aX:Float, aY:Float, controller:PlayerInput,aId:Int)
 	{
-		var player = new Player(controller, aX, aY);
+		player = new Player(controller, aX, aY);
 		player.ID=aId;
 		add(player);
 		players.add(player);

@@ -25,8 +25,8 @@ class TossableImp extends FlxSprite implements Tossable
 	{
 		if (player != null&&!flying)
 		{
-			x = player.x;
-			y = player.y;
+			x = player.x+player.width/2-width/2;
+			y = player.y-height/2;
 		}
 		super.update(elapsed);
 	}

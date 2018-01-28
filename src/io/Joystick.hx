@@ -42,4 +42,20 @@ class Joystick implements PlayerInput
 		return gamepad.justPressed.A;
 	}
 	
+	/* INTERFACE io.PlayerInput */
+	
+	public function tossX():Float 
+	{
+		if (gamepad.justPressed.B) return 1;
+		if (gamepad.justPressed.X) return -1;
+		return 0;
+	}
+	
+	public function tossY():Float 
+	{
+		if (gamepad.justPressed.Y) return -1;
+		if (gamepad.justPressed.A) return 1;
+		return 0;
+	}
+	
 }

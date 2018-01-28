@@ -39,5 +39,14 @@ class Keyboard2 implements PlayerInput
 	{
 		return FlxG.keys.justPressed.R;
 	}
+		
+	public function tossX():Float 
+	{
+		return 0;
+	}
 	
+	public function tossY():Float 
+	{
+		return 0;
+	}
 }

@@ -40,4 +40,16 @@ class Keyboard1 implements PlayerInput
 		return FlxG.keys.justPressed.SHIFT;
 	}
 	
+	/* INTERFACE io.PlayerInput */
+	
+	public function tossX():Float 
+	{
+		return 0;
+	}
+	
+	public function tossY():Float 
+	{
+		return 0;
+	}
+	
 }
