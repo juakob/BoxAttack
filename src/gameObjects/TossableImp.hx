@@ -23,12 +23,37 @@ class TossableImp extends FlxSprite implements Tossable
 	}
 	override public function update(elapsed:Float):Void 
 	{
+		
+		super.update(elapsed);
+		
+		if (x < -100)
+		{
+			x = 1280 / 2;
+			y = 720 / 2;
+			drop();
+		}
+		if (x >1400)
+		{
+			x = 1280 / 2;
+			y = 720 / 2;
+			drop();
+		}
+		if (y < -100)
+		{
+			x = 1280 / 2;
+			y = 720 / 2;
+			drop();
+		}
+		if (y > 900) {
+			x = 1280 / 2;
+			y = 720 / 2;
+			drop();
+		}
 		if (player != null&&!flying)
 		{
 			x = player.x+player.width/2-width/2;
 			y = player.y-height/2;
 		}
-		super.update(elapsed);
 	}
 	
 	
