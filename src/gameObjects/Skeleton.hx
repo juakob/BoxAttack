@@ -17,10 +17,11 @@ class Skeleton extends FlxSprite
 		var tex = FlxAtlasFrames.fromTexturePackerJson("img/end.png", "img/end.json");
 		frames = tex;
 		resetFrameSize();
+		offset.set(150, 140);
 		var names:Array<String> = new Array();
 		for (i in 0...33) 
 		{
-			names.push("Esqueleto_gnoclope00" + i);
+			names.push("Símbolo 100" + i);
 		}
 		animation.addByNames("dance",names,24);
 		animation.play("dance");

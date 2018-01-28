@@ -36,6 +36,7 @@ class GameState extends FlxState
 	var explosions:FlxGroup;
 	
 	var playersAvatars: Array <FlxSprite>;
+	var skeleton:gameObjects.Skeleton;
 	
 	public function new(joysitcks:Array<Int>=null) 
 	{
@@ -161,8 +162,8 @@ class GameState extends FlxState
 			scores[head.player.ID].text = head.player.score+"";
 			if (head.player.score >= 5000)
 			{
-				
-				add(new Skeleton(head.player.x, head.player.y));
+				skeleton = new Skeleton(head.player.x, head.player.y);
+				add(skeleton);
 				head.player.kill();
 				head.kill();
 				head.player = null;

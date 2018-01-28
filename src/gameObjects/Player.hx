@@ -52,7 +52,8 @@ class Player extends FlxSprite
 		createAnimation("idleLeft", 61, 70, true);
 		createAnimation("tossRight", 71, 79, false);
 		createAnimation("tossLeft", 80, 88, false);
-	
+		createAnimation("throwLeft", 89, 97, true);
+		createAnimation("throwRight", 98, 107, true);
 		
 	}
 	function createAnimation(name:String, from:Int, to:Int,loop:Bool):Void
@@ -71,6 +72,11 @@ class Player extends FlxSprite
 		knockOutTime-= elapsed;
 		if (knockOutTime > 0) {
 			drag.set(0, 0);
+			if (velocity.x > 0) {
+				animation.play("throwRight");
+			}else {
+				animation.play("throwLeft");	
+			}
 			maxVelocity.set(20000, 20000);
 			elasticity = 0.1;
 			super.update(elapsed);
